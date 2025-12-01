@@ -1,4 +1,4 @@
-/* Modern Reset */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,45 +6,97 @@
 }
 
 body {
-    font-family: "Inter", "Poppins", Arial, sans-serif;
-    background: #0e0e0e;
+    background-color: #0d0d0d;
     color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- Header --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav a {
+    margin-left: 25px;
+    font-size: 1rem;
+    color: #d7d7d7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00eaff;
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #111111);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding: 0 20px;
 }
 
-/* Center card */
-.card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 40px 50px;
+.content {
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 700px;
+}
+
+.content h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.content p {
+    font-size: 1.2rem;
+    opacity: 0.85;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.3s ease forwards;
+}
+
+/* --- Button --- */
+#ctaBtn {
+    padding: 14px 36px;
+    background: #00eaff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: 600;
     cursor: pointer;
+    transition: 0.4s ease;
+    box-shadow: 0 0 12px rgba(0, 234, 255, 0.6);
 }
 
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+#ctaBtn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 22px rgba(0, 234, 255, 1);
 }
 
-/* Text styling */
-p {
-    font-size: 2rem;
-    letter-spacing: 1px;
-    opacity: 0;
-    animation: fadeIn 1.2s ease forwards;
-}
-
-/* Smooth fade-in */
-@keyframes fadeIn {
+/* --- Animations --- */
+@keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
