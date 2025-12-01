@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const p = document.querySelector("p");
-    p.addEventListener("click", () => {
-        alert("Hello! You clicked the text.");
+    const card = document.querySelector(".card");
+
+    card.addEventListener("click", () => {
+        card.classList.add("glow");
+
+        // Remove glow effect after animation ends
+        setTimeout(() => {
+            card.classList.remove("glow");
+        }, 600);
     });
 });
