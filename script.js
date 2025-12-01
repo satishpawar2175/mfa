@@ -1,12 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const card = document.querySelector(".card");
+    const button = document.getElementById("ctaBtn");
 
-    card.addEventListener("click", () => {
-        card.classList.add("glow");
-
-        // Remove glow effect after animation ends
-        setTimeout(() => {
-            card.classList.remove("glow");
-        }, 600);
+    button.addEventListener("click", () => {
+        alert("Welcome! 🎉 Let's get started.");
     });
 });
